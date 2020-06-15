@@ -1,0 +1,50 @@
+.tracker-detail {
+
+	.wrap {
+		max-width: 90vw;
+		background-color: $dark;
+		padding: 10px;
+		margin: 20px 0 0;
+		border-radius: 5px;
+	}
+
+	.horse-name {
+		text-align: center;
+		color: $font-color;
+		margin-bottom: 40px;
+	}
+
+	.tile {
+		background-color: #484d53;
+		padding: 10px;
+		margin: 10px auto;
+		max-width: 90vw;
+		text-align: center;
+		border-radius: 5px;
+
+		&.active {
+			background-color: $brand-blue;
+		}
+
+		p {
+			margin: 0;
+			color: $font-color;
+		}
+	}
+
+	button {
+		border: none;
+		background-color: $font-color;
+		color: $dark;
+		border-radius: 5px;
+		outline: none;
+
+		&.close-button {
+			width: 100%;
+		}
+	}
+
+	.hidden {
+		display: none;
+	}
+}

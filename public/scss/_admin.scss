@@ -1,0 +1,35 @@
+body.admin {
+
+	form {
+		position: absolute;
+		left: 50%;
+		top: 25%;
+		transform: translate(-50%, -25%);
+	}
+
+	input {
+		background-color: $dark;
+		color: $font-color;
+		display: block;
+		width: 80vw;
+		max-width: 400px;
+		margin: 10px auto;
+		border: none;
+		font-size: 18px;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+	button {
+		display: block;
+		width: 80vw;
+		max-width: 400px;
+		margin: 30px auto;
+		background-color: $dark;
+		color: $font-color;
+		border: 1px solid $font-color;
+		border-radius: 5px;
+		padding: 5px;
+	}
+}
+

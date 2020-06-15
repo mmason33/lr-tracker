@@ -7,7 +7,37 @@ window.addEventListener('load', async () => {
 	productClick();
 	serviceClick();
 	saveClick();
+	addActions();
+	closeAction();
 });
+
+function addActions() {
+	document.querySelector('.actions').addEventListener('click', (e) => {
+		if (e.target.classList.contains('tile')) {
+			showHideSection(e.target.dataset.type, e.currentTarget);
+			return false;
+		}
+
+		if (e.target.parentNode.classList.contains('tile')) {
+			showHideSection(e.target.parentNode.dataset.type, e.currentTarget);
+			return false;
+		}
+	});
+}
+
+function closeAction() {
+	document.querySelector('.close-button').addEventListener('click', (e) => {
+		showHideSection(e.currentTarget.dataset.type, document.querySelector('.actions'));
+	});
+}
+
+function showHideSection(type, node) {
+	node.classList.toggle('hidden');
+	document.querySelector(`.${type}`).classList.toggle('hidden');
+	const closeDiv = document.querySelector('.close-action');
+	closeDiv.classList.toggle('hidden');
+	closeDiv.querySelector('button').setAttribute('data-type', type);
+}
 
 function saveClick() {
 	document.querySelector('.save-details').addEventListener('click', () => {
@@ -25,6 +55,7 @@ async function saveDataToFirestore() {
 	const db = firebase.firestore();
 	db.collection('records').add(data)
 	.then(function(docRef) {
+		window.location.reload();
 		// api to quickbooks route
 		console.log("Document written with ID: ", docRef.id);
 	})
@@ -41,7 +72,7 @@ function productClick() {
 			e.target.classList.toggle('active');
 		}
 
-		if (e.target.nodeName === 'H5') {
+		if (e.target.parentNode.classList.contains('tile')) {
 			e.target.parentNode.classList.toggle('active');
 		}
 	});
@@ -55,7 +86,7 @@ function serviceClick() {
 			e.target.classList.toggle('active');
 		}
 
-		if (e.target.nodeName === 'H5') {
+		if (e.target.parentNode.classList.contains('tile')) {
 			e.target.parentNode.classList.toggle('active');
 		}
 	});
@@ -75,7 +106,7 @@ function setHorseName() {
 	node.setAttribute('data-object', attr);
 
 	node.innerHTML = `
-		<h1>${name}</h1>
+		<h2>${name}</h2>
 	`;
 }
 
@@ -98,9 +129,7 @@ function buildProductTiles(arrOfObjs) {
 	arrOfObjs.forEach(product => {
 		html += `
 			<div class="product-tile tile" data-object='{"name": "${product.name}", "price": "${product.price}", "id": "${product.id}"}'>
-				<h5>${product.name}</h5>
-				<h5>${product.price}</h5>
-				<h5>${product.id}</h5>
+				<p>${product.name}</p>
 			</div>
 		`;
 	});
@@ -114,9 +143,7 @@ function buildServiceTiles(arrOfObjs) {
 	arrOfObjs.forEach(service => {
 		html += `
 			<div class="service-tile tile" data-object='{"name": "${service.name}", "price": "${service.price}", "id": "${service.id}"}'>
-				<h5>${service.name}</h5>
-				<h5>${service.price}</h5>
-				<h5>${service.id}</h5>
+				<p>${service.name}</p>
 			</div>
 		`;
 	});

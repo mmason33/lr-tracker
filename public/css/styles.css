@@ -1,0 +1,116 @@
+body {
+  background-color: #484d53; }
+
+nav a {
+  color: #c2c3c5 !important; }
+
+body.admin form {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -25%); }
+
+body.admin input {
+  background-color: #343a40;
+  color: #c2c3c5;
+  display: block;
+  width: 80vw;
+  max-width: 400px;
+  margin: 10px auto;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px; }
+
+body.admin button {
+  display: block;
+  width: 80vw;
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #343a40;
+  color: #c2c3c5;
+  border: 1px solid #c2c3c5;
+  border-radius: 5px;
+  padding: 5px; }
+
+body.admin-home .tile {
+  background-color: #343a40;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 90vw;
+  text-align: center;
+  border-radius: 5px; }
+  body.admin-home .tile.active {
+    background-color: #108481; }
+  body.admin-home .tile p {
+    margin: 0;
+    color: #c2c3c5; }
+
+body.index {
+  text-align: center; }
+  body.index button {
+    width: 80vw;
+    max-width: 400px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #343a40;
+    border: none;
+    border-radius: 5px;
+    color: #c2c3c5;
+    font-size: 18px; }
+
+.tracker .horse-tile {
+  background-color: #343a40;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 90vw;
+  text-align: center;
+  border-radius: 5px; }
+  .tracker .horse-tile a {
+    text-decoration: none;
+    color: #c2c3c5; }
+  .tracker .horse-tile p {
+    margin: 0;
+    color: #c2c3c5; }
+
+.tracker-detail .wrap {
+  max-width: 90vw;
+  background-color: #343a40;
+  padding: 10px;
+  margin: 20px 0 0;
+  border-radius: 5px; }
+
+.tracker-detail .horse-name {
+  text-align: center;
+  color: #c2c3c5;
+  margin-bottom: 40px; }
+
+.tracker-detail .tile {
+  background-color: #484d53;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 90vw;
+  text-align: center;
+  border-radius: 5px; }
+  .tracker-detail .tile.active {
+    background-color: #108481; }
+  .tracker-detail .tile p {
+    margin: 0;
+    color: #c2c3c5; }
+
+.tracker-detail button {
+  border: none;
+  background-color: #c2c3c5;
+  color: #343a40;
+  border-radius: 5px;
+  outline: none; }
+  .tracker-detail button.close-button {
+    width: 100%; }
+
+.tracker-detail .hidden {
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */

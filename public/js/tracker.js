@@ -29,11 +29,9 @@ function buildHorseTiles(arrOfObjs) {
 	let html = '';
 	arrOfObjs.forEach(obj => {
 		html += `
-			<div class="horse-tile">
+			<div class="horse-tile col-12">
 				<a href="/tracker/${obj.id}?horse=${obj.name}&client_id=${obj.client_id}&id=${obj.id}">
-					<h5>${obj.name}</h5>
-					<h5>${obj.client_id}</h5>
-					<h5>${obj.id}</h5>
+					<p>${obj.name}</p>
 				</a>
 			</div>
 		`;

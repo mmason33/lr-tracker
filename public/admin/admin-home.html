@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Tracker</title>
+		<title>Admin</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 
 		<!-- Import and configure the Firebase SDK -->
 		<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
@@ -19,18 +19,29 @@
 		<!-- Add Firebase products that you want to use -->
 		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
-		<!-- End Firebase -->
-
-		<script src="js/firebase-config.js"></script>
-		<script src="js/checkLogin.js"></script>
-		<script src="js/tracker.js"></script>
+		<script src="/js/firebase-config.js"></script>
+		<script src="/js/checkLogin.js"></script>
 	</head>
-	<body class="tracker">
+	<body class="admin-home">
 		<nav class="navbar navbar-light bg-dark">
-			<a class="navbar-brand" href="/tracker">LRtracker</a>
+			<a class="navbar-brand" href="/admin/auth">LRtrackerAdmin</a>
 		</nav>
 		<div class="container">
-			<div class="horses-wrap row"></div>
+			<div class="tile">
+				<a href="/admin/auth/horses">
+					<p>Horses</p>
+				</a>
+			</div>
+			<div class="tile">
+				<a href="/admin/auth/products">
+					<p>Products</p>
+				</a>
+			</div>
+			<div class="tile">
+				<a href="/admin/auth/services">
+					<p>Services</p>
+				</a>
+			</div>
 		</div>
 	</body>
 </html>

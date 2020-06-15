@@ -35,12 +35,12 @@ function initApp() {
 		if (result.credential) {
 			// This gives you a Google Access Token. You can use it to access the Google API.
 			var token = result.credential.accessToken;
-			document.getElementById('quickstart-oauthtoken').textContent = token;
+			// document.getElementById('quickstart-oauthtoken').textContent = token;
 
 			// Redirect
 			window.location.href = window.origin + '/tracker';
 		} else {
-			document.getElementById('quickstart-oauthtoken').textContent = 'null';
+			// document.getElementById('quickstart-oauthtoken').textContent = 'null';
 		}
 		// The signed-in user info.
 		var user = result.user;
@@ -72,15 +72,15 @@ function initApp() {
 			var isAnonymous = user.isAnonymous;
 			var uid = user.uid;
 			var providerData = user.providerData;
-			document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+			// document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
 			document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-			document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+			// document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
 		} else {
 			// User is signed out.
-			document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+			// document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
 			document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
-			document.getElementById('quickstart-account-details').textContent = 'null';
-			document.getElementById('quickstart-oauthtoken').textContent = 'null';
+			// document.getElementById('quickstart-account-details').textContent = 'null';
+			// document.getElementById('quickstart-oauthtoken').textContent = 'null';
 		}
 
 		document.getElementById('quickstart-sign-in').disabled = false;
