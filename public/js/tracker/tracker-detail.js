@@ -1,3 +1,6 @@
+import saveDataToFirestore from '../utils/save-firestore.js';
+import getFirestoreData from '../utils/get-firestore.js'
+
 window.addEventListener('load', async () => {
 	setHorseName();
 	const productData = await getFirestoreData('products');
@@ -41,33 +44,27 @@ function showHideSection(type, node) {
 
 function saveClick() {
 	document.querySelector('.save-details').addEventListener('click', () => {
-		saveDataToFirestore();
+		saveDataToFirestore('records', getData());
 	});
 }
 
-async function saveDataToFirestore() {
+function getData() {
 	const horseJson = document.querySelector('.horse-name').getAttribute('data-object');
 	const productData = Array.from(document.querySelectorAll('.product-tile.active')).map(product => JSON.parse(product.dataset.object));
 	const serviceData = Array.from(document.querySelectorAll('.service-tile.active')).map(service => JSON.parse(service.dataset.object));
 	const data = JSON.parse(horseJson);
 	data.products = productData;
 	data.services = serviceData;
-	const db = firebase.firestore();
-	db.collection('records').add(data)
-	.then(function(docRef) {
-		window.location.reload();
-		// api to quickbooks route
-		console.log("Document written with ID: ", docRef.id);
-	})
-	.catch(function(error) {
-		console.error("Error adding document: ", error);
-	});
+	data.date = new Date();
+	data.submitted_by = {
+		name: window.auth_user.displayName,
+		email: window.auth_user.email
+	};
+	return data;
 }
 
 function productClick() {
 	document.querySelector('.products').addEventListener('click', (e) => {
-		console.log('product click', e.target.nodeName === 'H5');
-
 		if (e.target.classList.contains('tile')) {
 			e.target.classList.toggle('active');
 		}
@@ -80,8 +77,6 @@ function productClick() {
 
 function serviceClick() {
 	document.querySelector('.services').addEventListener('click', (e) => {
-		console.log('product click', e.target.nodeName === 'H5');
-
 		if (e.target.classList.contains('tile')) {
 			e.target.classList.toggle('active');
 		}
@@ -108,19 +103,6 @@ function setHorseName() {
 	node.innerHTML = `
 		<h2>${name}</h2>
 	`;
-}
-
-async function getFirestoreData(firestoreCollection) {
-	const db = firebase.firestore();
-	const collection = await db.collection(firestoreCollection).get();
-	const arr = [];
-	collection.forEach(doc => {
-		const obj = doc.data();
-		obj.id = doc.id;
-		arr.push(obj);
-	});
-
-	return arr;
 }
 
 function buildProductTiles(arrOfObjs) {

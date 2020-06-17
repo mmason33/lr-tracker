@@ -113,4 +113,43 @@ body.index {
 .tracker-detail .hidden {
   display: none; }
 
+body.admin-details .tile {
+  background-color: #343a40;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 90vw;
+  text-align: center;
+  border-radius: 5px; }
+  body.admin-details .tile.active {
+    background-color: #108481; }
+  body.admin-details .tile p {
+    margin: 0;
+    color: #c2c3c5; }
+
+body.admin-details input {
+  background-color: #343a40;
+  color: #c2c3c5;
+  display: block;
+  width: 80vw;
+  max-width: 400px;
+  margin: 10px auto;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px; }
+
+body.admin-details button {
+  display: block;
+  width: 80vw;
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #343a40;
+  color: #c2c3c5;
+  border: 1px solid #c2c3c5;
+  border-radius: 5px;
+  padding: 5px; }
+
+body.admin-details .hidden {
+  display: none; }
+
 /*# sourceMappingURL=styles.css.map */

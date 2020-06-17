@@ -21,7 +21,7 @@
 	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
 	<script src="/js/config/firebase-config.js"></script>
 	<script src="/js/utils/checkLogin.js"></script>
-	<script src="/js/admin/admin-horses.js" type="module"></script>
+	<script src="/js/admin/admin-products.js"  type="module"></script>
 </head>
 <body class="admin-details">
 	<nav class="navbar navbar-light bg-dark">
@@ -29,14 +29,14 @@
 	</nav>
 	<div class="container">
 		<form>
-			<input type="text" name="name" placeholder="Horse Name">
-			<input type="text" name="client_id" placeholder="Client ID">
+			<input type="text" name="name" placeholder="Product Name">
+			<input type="number" name="price" placeholder="Product Price">
 			<button type="submit">Save</button>
 		</form>
 		<div class="delete-wrap hidden">
 			<button class="delete-button">Delete</button>
 		</div>
-		<div class="horse-wrap"></div>
+		<div class="product-wrap"></div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,49 @@
+body.admin-details {
+
+	.tile {
+		background-color: $dark;
+		padding: 10px;
+		margin: 10px auto;
+		max-width: 90vw;
+		text-align: center;
+		border-radius: 5px;
+
+		&.active {
+			background-color: $brand-blue;
+		}
+
+		p {
+			margin: 0;
+			color: $font-color;
+		}
+	}
+
+	input {
+		background-color: $dark;
+		color: $font-color;
+		display: block;
+		width: 80vw;
+		max-width: 400px;
+		margin: 10px auto;
+		border: none;
+		font-size: 18px;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+	button {
+		display: block;
+		width: 80vw;
+		max-width: 400px;
+		margin: 30px auto;
+		background-color: $dark;
+		color: $font-color;
+		border: 1px solid $font-color;
+		border-radius: 5px;
+		padding: 5px;
+	}
+
+	.hidden {
+		display: none;
+	}
+}
